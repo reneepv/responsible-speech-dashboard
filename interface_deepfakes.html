@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Forensic Speech Comparison Explainability Console</title>
+<link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Forensic Speech Comparison Explainability Console</h1>
+    <p class="sub">Each acoustic feature is scored as a system that outputs a likelihood ratio of it being synthetic vs. authentic. 
+      Hover over a feature to inspect the underlying evidence and read how to interpret it.</p>
+    <hr/>
+  </header>
+
+  <div class="grid">
+    <section class="panel">
+      <div class="panel-h">
+        <h2>Feature performance</h2>
+      </div>
+      <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>C<sub>llr</sub> (mean)</th>
+            <th>SD</th>
+            <th>EER %</th>
+          </tr>
+        </thead>
+        <tbody><!-- filled by JS --></tbody>
+      </table>
+      <div class="note">
+        <b>Reading a row:</b> the bar beside C<sub>llr</sub> fills from left (informative, near 0) toward right (uninformative, near 1).
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="viewer-h">
+        <div class="viewer-title" id="viewerTitle">Acoustic evidence<small id="viewerSub">select a feature</small></div>
+	  </div>
+      <span><span class="swatch" style="background:var(--real-fill);border:2px solid var(--real)"></span>Authentic voice</span>
+      <span><span class="swatch" style="background:var(--fake-fill);border:2px solid var(--fake)"></span>Provided evidence</span>
+      <div class="plot-stage"><div id="plot"></div></div>
+      <div class="interp" id="interp"></div>
+    </section>
+  </div>
+
+  <div class="glossary">
+    <div class="gcard">
+      <h3>C<sub>llr</sub>: log-LR cost</h3>
+      <div class="scale">0.00 = very well calibrated, ≈1.00 = no information</div>
+      <hr/>
+      <p>How accurate <em>and</em> well-calibrated the feature's likelihood ratios are. A reference system that knows nothing scores ≈ 1. Lower means better callibration.</p>
+    </div>
+    <div class="gcard">
+      <h3>EER: equal error rate</h3>
+      <div class="scale">0% = Good at separating samples, 50% cannot separate samples</div>
+      <hr/>
+      <p>The operating point where false-positive and false-negative rates meet. Lower scores means the algorithm is better at separating authentic from non-authentic samples.</p>
+    </div>
+    <div class="gcard">
+      <h3>Standard Deviation</h3>
+      <div class="scale">small = repeatable, large = volatile</div>
+      <hr/>
+      <p>Spread of C<sub>llr</sub> across cross-validation folds. Small deviation means the score is trustworthy; large deviation means it swings between runs.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div><b>Demonstration interface.</b> Metrics in the table are taken from the supplied results; all acoustic plots are illustrative placeholders generated from stated assumptions. Webpage based on the paper of: Yang et al. (2025), <em>Forensic deepfake audio detection using segmental speech features</em>. Forensic Science International, 112768</div>
+  </footer>
+</div>
+</body>
+<script type="text/javascript" src="scripts.js"></script>
+</html>
