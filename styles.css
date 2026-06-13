@@ -92,5 +92,5 @@
   .gcard .scale{font-size:11px;margin-bottom:7px;}
   .gcard p{margin:0;font-size:13px;}
 
-  footer{margin-top:30px;font-size:12px;border-top:1px solid var(--grid);padding-top:16px;
+  footer{margin-top:30px;font-size:14px;border-top:1px solid var(--grid);padding-top:16px;
     display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
