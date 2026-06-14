@@ -146,13 +146,13 @@ const RENDER={
 const TITLES={ellipse:'F1 × F2 confidence ellipses',ltfd:'Long-term formant distribution',ltf0:'Long-term F0 distribution',mel:'z-scored log-Mel filterbank energy'};
 const INTERP={
   ellipse:f=>`<h3>Explanation</h3>
-    <p>Each point is one measured token of the vowel <span class="phon">[${f.vowel}]</span> at its formant midpoint; each shaded shell is the 95% confidence ellipse derived from the <strong>principal axes of that token's covariance matrix</strong> (F1 × F2).</p>`,
+    <p>Each point represents a single measurement of the vowel <span class="phon">[${f.vowel}]</span>; the shaded ellipse shows the 95% confidence region around that measurement. Technically, each ellipse is derived from the principal axes of the token's covariance matrix in the F1 × F2 formant space.</p>`,
   ltfd:`<h3>Explanation</h3>
-    <p>The long-term formant distribution pools every voiced frame in the recording into a density over frequency, with peaks near F1-F4. It describes a speaker's overall resonance profile rather than a single sound.</p>`,
+    <p>The long-term formant distribution combines all voiced segments in the recording into a single density over frequency, describing the speaker's overall resonance profile rather than any single sound.</p>`,
   ltf0:`<h3>Explanation</h3>
-    <p>The long-term F0 distribution is the density of fundamental frequency (perceived pitch) across the whole utterance. Its width reflects intonation range.</p>`,
+    <p>The long-term F0 distribution shows the density of fundamental frequency (perceived pitch) across the entire recording. Its width reflects the speaker's intonation range.</p>`,
   mel:`<h3>Explanation</h3>
-    <p>Mean z-scored log-Mel filterbank energy per channel (low to high frequency); shaded regions are 95% confidence intervals across utterances.</p>`,
+    <p>Average energy per frequency channel (low to high), normalized across recordings. The shaded region shows the 95% confidence interval. Higher values indicate more energy in that frequency range.</p>`,
 };
 
 /* ---------- table + interaction ---------- */

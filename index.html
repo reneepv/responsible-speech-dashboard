@@ -49,27 +49,27 @@
 
   <div class="glossary">
     <div class="gcard">
-      <h3>C<sub>llr</sub>: log-LR cost</h3>
+      <h3>C<sub>llr</sub>: Log-Likelihood Ratio Cost</h3>
       <div class="scale">0.00 = very well calibrated, ≈1.00 = no information</div>
       <hr/>
-      <p>How accurate <em>and</em> well-calibrated the feature's likelihood ratios are. A reference system that knows nothing scores ≈ 1. Lower means better callibration.</p>
+      <p>Measures how well-calibrated the likelihood ratios are. A perfect system scores 0, a system with no useful information scores 1.</p>
     </div>
     <div class="gcard">
       <h3>EER: equal error rate</h3>
       <div class="scale">0% = Good at separating samples, 50% cannot separate samples</div>
       <hr/>
-      <p>The operating point where false-positive and false-negative rates meet. Lower scores means the algorithm is better at separating authentic from non-authentic samples.</p>
+      <p>The Equal Error Rate (EER) is the point where the false acceptance rate and false rejection rate are equal. A lower value indicates better separation between authentic and non-authentic samples.</p>
     </div>
     <div class="gcard">
-      <h3>Standard Deviation</h3>
+      <h3>SD: Standard Deviation</h3>
       <div class="scale">small = repeatable, large = volatile</div>
       <hr/>
-      <p>Spread of C<sub>llr</sub> across cross-validation folds. Small deviation means the score is trustworthy; large deviation means it swings between runs.</p>
+      <p>Standard deviation of C<sub>llr</sub> across cross-validation folds. A low value indicates consistent performance across runs, a high value suggests the model is sensitive to the choice of data split.</p>
     </div>
   </div>
 
   <footer>
-    <div><b>Demonstration interface.</b> Metrics in the table are taken from the supplied results; all acoustic plots are illustrative placeholders generated from stated assumptions. Webpage based on the paper of: Yang et al. (2025), <em>Forensic deepfake audio detection using segmental speech features</em>. Forensic Science International, 112768</div>
+    <div><b>Demonstration interface.</b> Metrics in the table are taken from the supplied results. All acoustic plots are illustrative placeholders generated from assumptions based on the results. Webpage based on the paper of: Yang et al. (2025), <em>Forensic deepfake audio detection using segmental speech features</em>. Forensic Science International, 112768</div>
   </footer>
 </div>
 </body>
