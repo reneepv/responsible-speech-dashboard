@@ -50,19 +50,19 @@
   <div class="glossary">
     <div class="gcard">
       <h3>C<sub>llr</sub>: Log-Likelihood Ratio Cost</h3>
-      <div class="scale">0.00 = very well calibrated, ≈1.00 = no information</div>
+      <div class="scale">0.00 = very well calibrated, 1.00 = no information</div>
       <hr/>
       <p>Measures how well-calibrated the likelihood ratios are. A perfect system scores 0, a system with no useful information scores 1.</p>
     </div>
     <div class="gcard">
       <h3>EER: equal error rate</h3>
-      <div class="scale">0% = Good at separating samples, 50% cannot separate samples</div>
+      <div class="scale">0% = perfect separation, 50% = no discriminative power</div>
       <hr/>
       <p>The Equal Error Rate (EER) is the point where the false acceptance rate and false rejection rate are equal. A lower value indicates better separation between authentic and non-authentic samples.</p>
     </div>
     <div class="gcard">
       <h3>SD: Standard Deviation</h3>
-      <div class="scale">small = repeatable, large = volatile</div>
+      <div class="scale">small = consistent, large = variable</div>
       <hr/>
       <p>Standard deviation of C<sub>llr</sub> across cross-validation folds. A low value indicates consistent performance across runs, a high value suggests the model is sensitive to the choice of data split.</p>
     </div>
