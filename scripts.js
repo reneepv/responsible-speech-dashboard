@@ -139,7 +139,7 @@ function renderMel(){
 /* ---------- per-diagram render + copy ---------- */
 const RENDER={
   ellipse:renderEllipse,
-  ltfd:()=>densityPlot(LTFD.real,LTFD.fake,[0,4000],'Frequency (Hz): F1 - F2 - F3 - F4',8),
+  ltfd:()=>densityPlot(LTFD.real,LTFD.fake,[0,4000],'Frequency (Hz): F3',8),
   ltf0:()=>densityPlot(LTF0.real,LTF0.fake,[60,260],'Fundamental frequency F0 (Hz)',5),
   mel:renderMel,
 };
